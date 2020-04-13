@@ -6,9 +6,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-loadable": "^5.5.0",
+    "react-scripts": "3.4.1",
+    "react-select": "^3.1.0",
+    "reactstrap": "^8.4.1",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "reduxsauce": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
