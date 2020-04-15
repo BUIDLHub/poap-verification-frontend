@@ -1,6 +1,6 @@
 @import "variables";
-// @import "../Components/Components";
-// @import "../Views/Views";
+@import "../Components/Components";
+@import "../Views/Views";
 
 .text-red {
   color: $red;
@@ -12,10 +12,6 @@
 
 .text-white {
   color: $white;
-}
-
-.text-light-gray {
-  color: $light-gray;
 }
 
 .flex-grow {

@@ -1,0 +1,23 @@
+@import "./main/main";
+
+.main-view-container {
+  max-height: calc(100vh) !important;
+  overflow: hidden !important;
+}
+
+.nav-wrapper {
+  margin-bottom: 60px !important;
+}
+
+.crumbs-wrapper {
+  margin-bottom: 40px !important;
+  border-bottom: 1px solid black !important;
+}
+
+.crumbs-fixed {
+  z-index: 1000;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  background: $light !important;
+}
