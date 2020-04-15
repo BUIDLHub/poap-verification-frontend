@@ -10,6 +10,8 @@ import { ToastContainer } from "react-toastify";
 
 export default class Main extends Component {
   render() {
+    console.log("In main");
+    
     let padding = cn("px-3", "px-md-5", "py-3");
     return (
       <div

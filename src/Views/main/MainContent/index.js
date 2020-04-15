@@ -1,18 +1,15 @@
-// import { Row, Col, Button } from "reactstrap";
-// import cn from "classnames";
-// import * as align from "Constants/alignments";
-// import React, { Component } from "react";
+import {connect} from 'react-redux';
+import View from './MainContent';
 
-// const MainContent = () => {
-//   return (
-//     <div className={cn(align.full, align.noMarginPad)}>
-//       <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-//         <Col xs="8" className={cn(align.noMarginPad)}>
-//           <p>Some text</p>
-//         </Col>
-//       </Row>
-//     </div>
-//   );
-// };
+const s2p = state => {
+    return {
+    } 
+} 
 
-// export default MainContent;
+ const d2p = dispatch => { 
+     return {
+
+    } 
+} 
+
+ export default connect(s2p,d2p)(View)

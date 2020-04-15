@@ -1,14 +1,22 @@
-// import React from "react";
-// import cn from "classnames";
-// import { alignments as align } from "Constants/alignments";
+import cn from 'classnames';
+import * as align from 'Constants/alignments';
+import { Row, Col } from 'reactstrap';
+import React, { Component } from 'react';
 
-// import { Col, Row } from "reactstrap";
+class MainContent extends Component {
+    render() {
+        return (
+            <div className={cn(align.full, align.allCenter, align.noMarginPad)}>
+                <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+                    <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
+                        Main Content
+                    </Col>
+                </Row>
+            </div>
+        );
+    }
+}
 
-// export default function MainContent() {
-//   return (
-//     <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-//       {/* Content here */}
-//       <p>here</p>
-//     </Row>
-//   );
-// }
+export default MainContent;
+
+

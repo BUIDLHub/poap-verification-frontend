@@ -39,7 +39,7 @@ class AppStart extends Component {
           align.noMarginPad
         )}
       >
-        {/* <Loading loading={this.props.showing} /> */}
+        
         <Switch>
           <Route path={`/`} component={Main} />
 

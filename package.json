@@ -16,6 +16,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
@@ -24,6 +25,9 @@
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "reduxsauce": "^1.1.2"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=src SASS_PATH=node_modules:src/scss react-scripts start",

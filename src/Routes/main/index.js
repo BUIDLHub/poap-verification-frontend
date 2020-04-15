@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Loadable from "react-loadable";
 import Loader from "Components/Loading";
 import { Route, Switch, Redirect } from "react-router-dom";
-import LoadingOverlay from "Components/Loading";
 
 //by default, go to main dashboard
 const DEF_ROUTE = "/";
@@ -22,6 +21,7 @@ const Main = Loadable({
 
 class App extends Component {
   render() {
+    
     return (
       <div className="container-fluid mr-0 ml-0 pr-0 pl-0">
         <Switch>

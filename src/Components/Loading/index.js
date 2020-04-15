@@ -1,19 +1,22 @@
 import React, { Fragment } from "react";
 import cn from "classnames";
 import * as align from "Constants/alignments";
-import * as Icon from "Components/icons";
+import {Icon} from "Components/icons";
 
 export default class LoadingOverlay extends React.Component {
   render() {
     let { loading, status, size, small } = this.props;
 
     if (!loading) {
+      
       return null;
     }
 
     if (small) {
       size = "small";
     }
+
+    console.log("Loading");
 
     return (
       <Fragment>
