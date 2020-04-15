@@ -1,7 +1,16 @@
 import {Creators} from './actions';
+import {default as web3Ops} from 'Redux/web3/operations';
+import {default as poapOps} from 'Redux/poap/operations';
 
+const initWallet = async props => {
+  return props.dispatch(web3Ops.init())
+      .then(()=>props);
+}
 
-const metricsOps = metricsRedux.operations;
+const initPoap = async props => {
+  return props.dispatch(poapOps.init())
+    .then(()=>props);
+}
 
 const start = () => (dispatch,getState) => {
   let state = getState();
@@ -18,7 +27,13 @@ const _doStart = () => (dispatch,getState) => {
     dispatch,
     getState
   }
-  dispatch(Creators.initSuccess());
+
+  return initWallet(props)
+  .then(initPoap)
+  .then(props => {
+    dispatch(Creators.initSuccess());
+  });
+  
   /*
   return initStorage(props)
   
@@ -46,7 +61,6 @@ const _doStart = () => (dispatch,getState) => {
 }
 
 const reset = () => dispatch => {
-  DepManager.resetDeps();
   dispatch(Creators.reset());
 }
  
