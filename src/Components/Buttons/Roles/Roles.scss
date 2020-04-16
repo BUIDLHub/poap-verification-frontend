@@ -1,0 +1,33 @@
+.button-roles {
+  background-color: #6bd567;
+  border-radius: 30px;
+  color: $white !important;
+  font-weight: 300;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+  border: none;
+  cursor: pointer;
+
+  @include xs() {
+    padding: 0.2rem 1rem;
+    margin: 0.2rem;
+    font-size: 1rem;
+  }
+  @include md() {
+    padding: 0.2rem 1.5rem;
+    font-size: 1.15rem;
+  }
+  transition: all 0.3s ease-in-out;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none !important;
+    background-color: rgb(126, 241, 122) !important;
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

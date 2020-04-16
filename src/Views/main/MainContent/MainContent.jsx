@@ -32,7 +32,7 @@ export default class MainContent extends Component {
         )}
       >
         <Row
-          className={cn(align.full, align.noMarginPad, align.topCenter, "my-2")}
+          className={cn(align.full, align.noMarginPad, align.topCenter, "mt-5")}
         >
           <Col xs="12" className={cn(align.topAlign, align.noMarginPad)}>
             <Badges {...this.props} />
@@ -40,9 +40,17 @@ export default class MainContent extends Component {
             <BUIDLHub {...this.props} />
           </Col>
         </Row>
-        <Row className={cn(align.full, align.noMarginPad, align.vCenter)}>
-          <p>Are you confused or did you encounter a bug?</p>
-          <p>Let us know!</p>
+        <Row
+          className={cn(align.full, align.noMarginPad, align.vCenter, "mt-5")}
+        >
+          <p className={cn("bug-text")}>
+            Are you confused or did you encounter a bug?
+          </p>
+          <p className={cn("bug-text")}>
+            <a href="/" rel="noopener noreferrer">
+              Let us know!
+            </a>
+          </p>
         </Row>
       </div>
     );

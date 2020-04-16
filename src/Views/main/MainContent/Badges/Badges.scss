@@ -4,5 +4,8 @@
     color: $gray-700;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+    @include md() {
+      font-size: 1.25rem;
+    }
   }
 }

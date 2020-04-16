@@ -1,0 +1,31 @@
+.button-join-here {
+  background-color: $poap-blue-bg;
+  border-radius: 30px;
+  color: $discord !important;
+  font-weight: 700;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+  border: none;
+  cursor: pointer;
+
+  @include xs() {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+  }
+  @include md() {
+    padding: 0.3rem 1.5rem;
+    font-size: 1.15rem;
+  }
+  transition: all 0.3s;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: none !important;
+    background-color: $white !important;
+    border: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
