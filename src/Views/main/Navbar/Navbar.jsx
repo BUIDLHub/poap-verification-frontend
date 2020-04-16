@@ -1,5 +1,7 @@
 import React from "react";
 import {
+  Row,
+  Col,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -10,6 +12,10 @@ import {
 } from "reactstrap";
 import cn from "classnames";
 import * as align from "Constants/alignments";
+
+import NavLogo from "./NavLogo";
+import EventTitle from "./EventTitle";
+import Status from "./Status";
 
 export default class Navi extends React.Component {
   constructor(props) {
@@ -29,7 +35,22 @@ export default class Navi extends React.Component {
   render() {
     return (
       <div className={cn("navbar_container", align.full, "top")}>
-        <Navbar
+        <Row className={cn(align.full, align.noMarginPad)}>
+          <Col xs="4" className={cn(align.leftCenter, align.noMarginPad)}>
+            <NavLogo />
+          </Col>
+          <Col xs="8" className={cn(align.noMarginPad)}>
+            <EventTitle />
+            <Status />
+          </Col>
+        </Row>
+      </div>
+    );
+  }
+}
+
+{
+  /* <Navbar
           className={cn(
             "logo_positioned",
             "nav_style",
@@ -39,8 +60,9 @@ export default class Navi extends React.Component {
           )}
           dark
           expand="md"
-        >
-          <NavbarToggler
+        > 
+        
+        <NavbarToggler
             className={cn(
               // 'd-none',
               "ml-xs-2",
@@ -108,10 +130,6 @@ export default class Navi extends React.Component {
                 </a>
               </NavItem>
             </Nav>
-          </Collapse>
-          {/* </div> */}
-        </Navbar>
-      </div>
-    );
-  }
+          </Collapse> 
+       </Navbar> */
 }

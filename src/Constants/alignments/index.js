@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from "classnames";
 
 export const justLeft = cn("justify-content-start");
 export const justCenter = cn("justify-content-center");
@@ -10,6 +10,7 @@ export const alignRight = cn("align-items-end");
 
 const flex = "d-flex";
 const row = "flex-row";
+
 export const leftLeft = cn(flex, row, justLeft, alignLeft);
 export const leftCenter = cn(flex, row, justLeft, alignCenter);
 export const rightRight = cn(flex, row, justRight, alignRight);

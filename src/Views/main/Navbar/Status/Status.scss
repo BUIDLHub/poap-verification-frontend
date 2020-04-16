@@ -1,0 +1,33 @@
+.attendance {
+  color: $white;
+  font-weight: 600;
+  @include xs() {
+    font-size: 1.25rem;
+  }
+  @include md() {
+    font-size: 2rem;
+  }
+}
+
+.access {
+  color: $poap-blue-light;
+  font-weight: 300;
+  @include xs() {
+    font-size: 1.15rem;
+  }
+  @include md() {
+    font-size: 1.6rem;
+    margin-top: -20px;
+  }
+}
+
+.external-link {
+  color: $poap-blue-light;
+  cursor: default;
+  transition: all 0.3s linear;
+  &:hover {
+    color: $white;
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+}

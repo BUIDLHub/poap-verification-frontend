@@ -13,7 +13,7 @@ import Main from "Routes/main";
 import "font-awesome/css/font-awesome.min.css";
 // Import Main styles for this application
 
-// import "scss/style.scss";
+import "scss/style.scss";
 // import "react-toggle/style.css";
 // import "animate.css/animate.min.css";
 
@@ -39,7 +39,6 @@ class AppStart extends Component {
           align.noMarginPad
         )}
       >
-        
         <Switch>
           <Route path={`/`} component={Main} />
 

@@ -2,6 +2,19 @@
 @import "../Components/Components";
 @import "../Views/Views";
 
+.btn-secondary {
+  color: white;
+  background-color: none !important;
+  border-color: none !important;
+  &:focus,
+  &:hover,
+  &:active {
+    color: white;
+    background-color: none !important;
+    border-color: none !important;
+  }
+}
+
 .text-red {
   color: $red;
 }
