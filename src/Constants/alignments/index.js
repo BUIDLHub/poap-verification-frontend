@@ -17,6 +17,8 @@ export const rightRight = cn(flex, row, justRight, alignRight);
 export const rightCenter = cn(flex, row, justRight, alignCenter);
 export const allCenter = cn(flex, row, justCenter, alignCenter);
 
+export const topAlign = cn(flex, row, justCenter);
+
 const col = "flex-column";
 export const topLeft = cn(flex, col, leftLeft);
 export const topRight = cn(flex, col, rightRight);

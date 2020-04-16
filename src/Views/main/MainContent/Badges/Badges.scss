@@ -1,7 +1,8 @@
 .yourbadges {
   @include md() {
-    margin-top: 1rem !important;
-    color: $gray-600;
+    // margin-top: 1rem !important;
+    color: $gray-700;
     font-family: "Roboto", sans-serif;
+    font-weight: 500;
   }
 }
