@@ -21,3 +21,13 @@
   left: 0;
   background: $light !important;
 }
+
+.clickable {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.slight-shadow {
+  box-shadow: 3px 5px 10px 3px $gray-200;
+}

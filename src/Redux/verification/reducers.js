@@ -3,36 +3,51 @@ import {createReducer} from 'reduxsauce';
 
 
 const INIT = {
-    steps: {}
+    loading: false,
+    inviteLink: null,
+    authCommand: null,
+    status: null,
+    error: null
 }
 
-const start = (state=INIT, action) => {
-    let steps = {
-        ...state.steps
-    }
-    action.steps.forEach(s=>{
-        steps[s.id] = s;
-    });
 
+const working = (state=INIT, action) => {
     return {
-        steps
+        ...state,
+        loading: action.working 
+    }
+}
+
+const status = (state=INIT, action) => {
+    return {
+        ...state,
+        error: null,
+        status: action.status
     }
 }
 
 const update = (state=INIT, action) => {
-    let s = action.step;
-    let steps = {
-        ...state.steps,
-        [s.id]: s
-    };
+    let data = action.data;
     return {
-        steps
+        ...state,
+        loading: false,
+        inviteLink: data.inviteLink,
+        authCommand: data.authCommand
     }
 }
 
+const fail = (state=INIT, action) => {
+    return {
+        ...state,
+        loading: false,
+        error: action.error
+    }
+}
 
 const HANDLERS = {
-    [Types.INIT_SUCCESS]: start,
+    [Types.WORKING]: working,
+    [Types.STATUS]: status,
+    [Types.FAILURE]: fail,
     [Types.UPDATE]: update
   }
   

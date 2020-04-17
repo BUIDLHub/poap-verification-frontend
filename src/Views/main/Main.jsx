@@ -6,7 +6,6 @@ import Navbar from "./Navbar/Navbar";
 import MainContent from "./MainContent";
 import Footer from "./Footer";
 
-import { ToastContainer } from "react-toastify";
 
 export default class Main extends Component {
   render() {
@@ -24,7 +23,7 @@ export default class Main extends Component {
         )}
       >
         <Navbar {...this.props} />
-        <ToastContainer />
+       
         <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
           <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
             <MainContent {...this.props} />

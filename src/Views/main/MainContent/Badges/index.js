@@ -32,7 +32,9 @@ export default class Badges extends React.Component {
           <Col xs="12" className={cn(align.leftCenter, align.noMarginPad)}>
             {_.keys(eventsByToken).map((k, i) => {
               let evt = eventsByToken[k];
-              return <EventBadge {...evt} key={i} />;
+              return <EventBadge {...evt} goToBadge={()=>{
+                        this.props.goToBadge(evt, k)
+                    }} key={i} />;
             })}
           </Col>
         </Row>
@@ -43,7 +45,8 @@ export default class Badges extends React.Component {
 
 const EventBadge = (props) => {
   return (
-    <div className={cn(align.full, align.allCenter, align.noMarginPad)}>
+    <div className={cn(align.full, align.allCenter, align.noMarginPad, "clickable")}
+      onClick={props.goToBadge}>
       <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
         <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
           <img src={props.image_url} height="80" alt="badge" />

@@ -3,7 +3,8 @@ import {createReducer} from 'reduxsauce';
 
 const INIT = {
     loading: false,
-    error: null
+    error: null,
+    byTokenID: {}
 }
 
 const working = (state=INIT, action) => {
