@@ -4,7 +4,7 @@
   position: absolute;
   background: rgba(255,255,255,.5);
   text-align: center;
-  font-size: 4em;
+  font-size: 1em;
   z-index: 9999;
   top: 0;
   left: 0;
@@ -32,15 +32,15 @@
   height: 50px;
   color: theme-color("text-dark");
   z-index: 999999999;
-  font-size: 1.5em;
+  font-size: .8em;
   position: absolute;
   top: 50%;
   right: 0;
   bottom: 0;
   left: 0;
-  margin-top: 50px;
+  margin-top: 0px;
   text-align: center;
-  background: rgba(255,255,255,.7);
+  background: transparent;
 }
 
 
@@ -75,6 +75,8 @@
         left: 0;
         text-align: center;
     }
+
+
 
 
 

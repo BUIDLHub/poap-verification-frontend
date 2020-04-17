@@ -9,16 +9,7 @@ import MainContainer from "./MainContainer";
 import BUIDLHub from "./BUIDLHub";
 
 export default class MainContent extends Component {
-  static getDerivedStateFromProps(props, state) {
-    if (props.needsInit) {
-      setTimeout(() => {
-        props.runInit();
-      }, 1);
-    }
-    return {};
-  }
-
-  state = {};
+  
 
   render() {
     const { eventsByToken } = this.props;

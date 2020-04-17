@@ -8,7 +8,6 @@ export default class LoadingOverlay extends React.Component {
     let { loading, status, size, small } = this.props;
 
     if (!loading) {
-      
       return null;
     }
 
@@ -16,23 +15,19 @@ export default class LoadingOverlay extends React.Component {
       size = "small";
     }
 
-    console.log("Loading");
-
     return (
-      <Fragment>
-        <div className={cn("preloader embedded", align.allCenter, size)}>
+      <div className={cn("loading-overlay", align.full, align.topCenter, align.noMarginPad)}>
+        <div className={cn( "preloader","embedded",align.topCenter, size)}>
           <span className={cn(size, align.allCenter)}>
             <Icon className="fa fa-spinner fa-spin" />
           </span>
         </div>
         {status && (
-          <div className={cn("d-block text-center", align.full)}>
-            <span className={cn("load-status", align.full, "text-center")}>
-              {status}
-            </span>
+          <div className={cn("load-status", align.full, align.allCenter)}>
+            {status}
           </div>
         )}
-      </Fragment>
+      </div>
     );
   }
 }

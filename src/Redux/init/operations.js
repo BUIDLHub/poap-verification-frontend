@@ -1,6 +1,14 @@
 import {Creators} from './actions';
 import {default as web3Ops} from 'Redux/web3/operations';
 import {default as poapOps} from 'Redux/poap/operations';
+import {default as storageOps} from 'Redux/storage/operations';
+import {default as verOps} from 'Redux/verification/operations';
+
+
+const initStorage = async props => {
+  return props.dispatch(storageOps.init())
+    .then(()=>props);
+}
 
 const initWallet = async props => {
   return props.dispatch(web3Ops.init())
@@ -10,6 +18,11 @@ const initWallet = async props => {
 const initPoap = async props => {
   return props.dispatch(poapOps.init())
     .then(()=>props);
+}
+
+const initVerification = async props => {
+  return props.dispatch(verOps.init())
+  .then(()=>props);
 }
 
 const start = () => (dispatch,getState) => {
@@ -28,36 +41,13 @@ const _doStart = () => (dispatch,getState) => {
     getState
   }
 
-  return initWallet(props)
+  return initStorage(props)
+  .then(initWallet)
   .then(initPoap)
+  .then(initVerification)
   .then(props => {
     dispatch(Creators.initSuccess());
   });
-  
-  /*
-  return initStorage(props)
-  
-        .then(initAccount)
-        .then(initSettings)
-        .then(initSubscribe)
-        .then(initContracts)
-        .then(initPlugins)
-        .then(initTriggers)
-        .then(initPluginActions)
-        .then(initCoreExtensions)
-        .then(initApps)
-        .then(initFlows)
-        .then(initTemplates)
-        .then(initFeatures)
-        .then(initMetrics)
-        .then(()=>{
-          dispatch(Creators.initSuccess());
-        })
-        .catch(e=>{
-          console.log(e);
-          dispatch(Creators.failure(e));
-        });
-        */
 }
 
 const reset = () => dispatch => {
