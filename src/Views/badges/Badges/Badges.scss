@@ -1,11 +1,40 @@
 .yourbadges {
+  color: $gray-700;
   @include md() {
     // margin-top: 1rem !important;
-    color: $gray-700;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    @include md() {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.badge-name {
+  color: $black;
+  @include md() {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     @include md() {
-      font-size: 1.15rem;
+      font-size: 0.9rem;
     }
+  }
+}
+
+.badges-img {
+  @include xs() {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.hover-effect {
+  background: rgb(0, 0, 0);
+  height: 120px;
+  width: 120px;
+  opacity: 1;
+  transition: 0.4s all ease-in-out;
+  &:hover {
+    opacity: 0.75;
   }
 }

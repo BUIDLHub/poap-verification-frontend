@@ -1,0 +1,14 @@
+.event-name-title {
+  color: $poap-blue-main;
+  font-weight: 600;
+  background-color: $white;
+  border-radius: 25px;
+  font-style: italic;
+  @include xs() {
+    font-size: 1.4rem;
+    padding: 0.4rem 1.3rem;
+  }
+  @include md() {
+    font-size: 1.75rem;
+  }
+}

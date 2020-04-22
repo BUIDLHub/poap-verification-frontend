@@ -1,11 +1,29 @@
 .header-container {
-    background: $blue;
-    color: $white;
-    min-height: 200px;
+  background: $blue;
+  color: $white;
+  @include xs() {
+    min-height: 25vh;
+  }
+  //     @include lg() {
+  //          min-height: 200px;
+  //     }
 }
 
 .header-logo {
+  @include md() {
     position: fixed;
     top: 20px;
     left: 30px;
+  }
+}
+
+.header-title {
+  color: $white;
+  font-weight: 600;
+  @include xs() {
+    font-size: 2.5rem;
+  }
+  @include md() {
+    font-size: 2.8rem;
+  }
 }

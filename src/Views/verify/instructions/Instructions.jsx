@@ -1,50 +1,61 @@
-import cn from 'classnames';
-import * as align from 'Constants/alignments';
-import {Icon} from 'Components/icons';
-import { 
-    Row, 
-    Col, 
-    Card,
-    CardBody
-} from 'reactstrap';
-import React, { Component } from 'react';
+import cn from "classnames";
+import * as align from "Constants/alignments";
+import { Icon } from "Components/icons";
+import { Row, Col, Card, CardBody } from "reactstrap";
+import React, { Component } from "react";
+
+import Bullet from "Components/Bullet";
+import Join from "./Join";
 
 class Instructions extends Component {
-    render() {
-        const { 
-            className,
-            inviteLink,
-            authCommand
-         } = this.props;
+  render() {
+    const { className, inviteLink, authCommand } = this.props;
 
-        if(!inviteLink) {
-            return null;
-        }
+    if (!inviteLink) {
+      return null;
+    }
 
-        return (
-            <div className={cn(align.full, "px-3", "py-3", align.allCenter, align.noMarginPad)}>
-                
-            <Card className={cn("slight-shadow",  className)}>
-                <CardBody className={cn(align.full, align.topCenter, "py-4", "px-3", align.noMarginPad)}>
-                    
-                    <Row className={cn(align.full, "border-bottom", "border-muted", "py-4", align.noMarginPad, align.allCenter)}>
+    return (
+      <div
+        className={cn(
+          align.full,
+          "px-3",
+          "py-3",
+          align.allCenter,
+          align.noMarginPad
+        )}
+      >
+        <Card className={cn("slight-shadow", className)}>
+          <CardBody
+            className={cn(
+              align.full,
+              align.topCenter,
+              "py-4",
+              "px-3",
+              align.noMarginPad
+            )}
+          >
+            {/* Success.jsx  */}
+            {/* <Row className={cn(align.full, "border-bottom", "border-muted", "py-4", align.noMarginPad, align.allCenter)}>
                         <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
                             <Icon className={cn("fa-check-circle", "text-success", "text-4")} />
                             <span className={cn('font-weight-bold', 'text-1', "pl-3")}>
                                 Access Accepted!
                             </span>
                         </Col>
-                    </Row>
+                    </Row> */}
 
-                    <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-                        <Col xs="12" className={cn(align.leftCenter, align.noMarginPad)}>
-                            <span className={cn('font-weight-bold', 'text-1')}>
-                                Next Steps:
-                            </span>
-                        </Col>
-                    </Row>
+            <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+              <Col xs="12" className={cn(align.leftCenter, align.noMarginPad)}>
+                <span className={cn("font-weight-bold", "text-1")}>
+                  Next Steps:
+                </span>
+              </Col>
+            </Row>
 
-                    <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+            {/* Join.jsx */}
+            <Join {...this.props} />
+            {/* <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
                         <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
                             <div className={cn(align.full, align.topCenter, align.noMarginPad)}>
                                 <Bullet>
@@ -73,43 +84,48 @@ class Instructions extends Component {
                                 </Bullet>
                             </div>
                         </Col>
-                    </Row>
+                    </Row> */}
 
-                    <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-                        <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
-                            
-                        </Col>
-                    </Row>
-
-                    <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-                        <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
-                            <a className={cn("text-2", "text-success", "font-weight-bold")} 
-                                    href={inviteLink} target="_blank">
-                                        Join Server!
-                            </a>
-                        </Col>
-                    </Row>
-
-                </CardBody>
-            </Card>
-            </div>
-        );
-    }
-}
-
-const Bullet = props => {
-    return (
-        <div className={cn(align.full, "py-2", align.allCenter, align.noMarginPad)}>
             <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-                <Col xs="1" className={cn(align.topLeft, align.noMarginPad)}>
-                    <Icon className={cn("fa-circle", "text-sz-sm")} />
-                </Col>
-                <Col xs="11" className={cn(align.leftCenter, align.noMarginPad)}>
-                    {props.children}
-                </Col>
+              <Col
+                xs="12"
+                className={cn(align.allCenter, align.noMarginPad)}
+              ></Col>
             </Row>
-        </div>
-    )
+
+            {/* Passed to Join.jsx */}
+            {/* <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+              <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
+                <a
+                  className={cn("text-2", "text-success", "font-weight-bold")}
+                  href={inviteLink}
+                  target="_blank"
+                >
+                  Join Server!
+                </a>
+              </Col>
+            </Row> */}
+          </CardBody>
+        </Card>
+      </div>
+    );
+  }
 }
+
+// Components/Bullet
+// const Bullet = (props) => {
+//   return (
+//     <div className={cn(align.full, "py-2", align.allCenter, align.noMarginPad)}>
+//       <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+//         <Col xs="1" className={cn(align.topLeft, align.noMarginPad)}>
+//           <Icon className={cn("fa-circle", "text-sz-sm")} />
+//         </Col>
+//         <Col xs="11" className={cn(align.leftCenter, align.noMarginPad)}>
+//           {props.children}
+//         </Col>
+//       </Row>
+//     </div>
+//   );
+// };
 
 export default Instructions;

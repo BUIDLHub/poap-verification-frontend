@@ -5,7 +5,6 @@ import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import * as align from "Constants/alignments";
 import { default as initOps } from "Redux/init/operations";
 
-// IIII Change Route here of Main to Routes/
 import Error from "Routes/error";
 import Badges from "Routes/badges";
 import Verify from "Routes/verify";
@@ -35,7 +34,6 @@ class AppStart extends Component {
         )}
       >
         <Switch>
-          
           <Route path={"/verify"} component={Verify} />
           <Route path={`/`} component={Badges} />
 

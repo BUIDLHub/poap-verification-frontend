@@ -3,9 +3,10 @@ import * as align from "Constants/alignments";
 import { Row, Col } from "reactstrap";
 import React, { Component } from "react";
 import Navbar from "./Navbar/Navbar";
-import Badges from "./Badges";
+import Verify from "./VerifyEvent";
+import Success from "./instructions/Success";
+import Instructions from "./instructions";
 import BUIDLHub from "Components/BUIDLHub";
-import Footer from "Components/Footer";
 import Header from "./Header";
 
 import poapLogo from "Assets/images/POAPLogo.svg";
@@ -15,6 +16,14 @@ import { ToastContainer } from "react-toastify";
 
 export default class Main extends Component {
   render() {
+    const { event, tokenID, inviteLink } = this.props;
+    if (!event) {
+      return null;
+    }
+
+    let verifyInOut = inviteLink ? "fadeOutDown" : "bounceInUp";
+    let instrInOut = inviteLink ? "bounceInDown" : null;
+
     let padding = cn("px-3", "px-md-5", "py-3");
     return (
       <div
@@ -66,17 +75,14 @@ export default class Main extends Component {
                     xs="12"
                     className={cn(align.topCenter, align.noMarginPad)}
                   >
-                    <Header />
+                    <Header {...this.props} />
                   </Col>
                 </Row>
               </div>
             </Col>
             <Col xs="3" className={cn(align.allCenter, align.noMarginPad)} />
           </Col>
-          <Col
-            xs="12"
-            className={cn(align.allCenter, align.noMarginPad, "mb-0")}
-          >
+          <Col xs="12" className={cn(align.topCenter, align.noMarginPad)}>
             <Row
               className={cn(
                 align.full,
@@ -88,7 +94,7 @@ export default class Main extends Component {
               <Col xs="3" className={cn(align.allCenter, align.noMarginPad)} />
               <Col xs="6" className={cn(align.topCenter, align.noMarginPad)}>
                 <span className={cn("yourbadges")}>
-                  Click on a badge to get access.
+                  Join Discord Server(s).
                 </span>
               </Col>
               <Col xs="3" className={cn(align.topCenter, align.noMarginPad)}>
@@ -104,24 +110,11 @@ export default class Main extends Component {
                 </Row>
               </Col>
             </Row>
+            {!inviteLink && <Verify {...this.props} />}
           </Col>
-          <Col
-            xs="12"
-            className={cn(align.allCenter, align.noMarginPad, "mt-0")}
-          >
-            <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-              <Col xs="3" className={cn(align.allCenter, align.noMarginPad)} />
-              <Col xs="6" className={cn(align.topCenter, align.noMarginPad)}>
-                <Badges {...this.props} />
-              </Col>
-              <Col xs="3" className={cn(align.topCenter, align.noMarginPad)} />
-            </Row>
+          <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
+            <BugText />
           </Col>
-          <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-            <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
-              <BugText />
-            </Col>
-          </Row>
         </Row>
       </div>
     );
