@@ -16,7 +16,9 @@ const s2p = state => {
      let tokenID = own.tokenID;
      return {
          doVerify: () => {
-            return dispatch(verOps.runVerify(eventID, tokenID));
+             if(eventID && tokenID) {
+                return dispatch(verOps.runVerify(eventID, tokenID));
+             }
          }
     } 
 } 

@@ -34,8 +34,7 @@ const runVerify = (eventID, tokenID) => async (dispatch, getState) => {
         let w3 = getState().web3.provider;
         let sign = w3.getSigner();
         if(!sign) {
-            dispatch(Creators.failure("Could not find signer from browser wallet"));
-            return;
+            return dispatch(Creators.failure("Could not find signer from browser wallet"));
         }
 
         let sig = await sign.signMessage(nonce);
@@ -54,10 +53,10 @@ const runVerify = (eventID, tokenID) => async (dispatch, getState) => {
         });
         
         if(!res.inviteLinks) {
-            dispatch(Creators.failure("You do not appear to be the token owner"));
-        } else {
-            dispatch(Creators.update(res.inviteLinks));
+            return dispatch(Creators.failure("You do not appear to be the token owner"));
         }
+        dispatch(Creators.update(res.inviteLinks));
+        return true;
 
     } catch (e) {
         console.log(e);
@@ -66,8 +65,13 @@ const runVerify = (eventID, tokenID) => async (dispatch, getState) => {
     }
 }
 
+const clear = () => dispatch => {
+    dispatch(Creators.update([]));
+}
+
 export default {
     init,
     update,
-    runVerify
+    runVerify,
+    clear
 }

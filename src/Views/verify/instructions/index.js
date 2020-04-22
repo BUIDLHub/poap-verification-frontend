@@ -1,27 +1,36 @@
-import { connect } from "react-redux";
-import View from "./Instructions";
-import Success from "./Instructions";
-import copy from "copy-to-clipboard";
-import { default as toastr } from "Redux/toastr/operations";
+import {connect} from 'react-redux';
+import View from './NewInstructions'; //'./Instructions';
+import copy from 'copy-to-clipboard';
+import {default as toastr} from 'Redux/toastr/operations';
 
-const s2p = (state) => {
-  let ver = state.verification;
-  return {
-    loading: ver.loading,
-    status: ver.status,
-    error: ver.error,
-    inviteLink: ver.inviteLink,
-    authCommand: ver.authCommand,
-  };
-};
+/**
+ * [
+    {
+        inviteLink: "https://discord.com",
+        authCommand: "!requestAccess 939399333",
+        botName: "Dummy Bot",
+        guildName: "My Server",
+        roles: ['Role1', 'Role2']
+    }
+]
+ */
+const s2p = state => {
+    let ver = state.verification;
+    return {
+        loading: ver.loading,
+        status: ver.status,
+        error: ver.error,
+        inviteLinks: ver.inviteLinks
+    }  
+} 
 
-const d2p = (dispatch) => {
-  return {
-    copyToClipboard: (text) => {
-      copy(text);
-      dispatch(toastr.info("Copied to clipboard"));
-    },
-  };
-};
+ const d2p = dispatch => { 
+     return {
+        copyToClipboard: text => {
+            copy(text);
+            dispatch(toastr.info("Copied to clipboard"))
+        }
+    } 
+} 
 
-export default connect(s2p, d2p)(View, Success);
+ export default connect(s2p,d2p)(View)

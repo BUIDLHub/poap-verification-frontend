@@ -34,7 +34,7 @@ export default class Badges extends React.Component {
               >
                 <Icon className={cn("fa-spinner fa-spin")} />
                 <span className={cn("font-weight-light", "text-1", "pl-2")}>
-                  loading...
+                  loading badges...
                 </span>
               </div>
             )}

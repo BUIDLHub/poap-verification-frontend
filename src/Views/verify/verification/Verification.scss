@@ -1,0 +1,20 @@
+.wizard-container {
+    overflow: hidden !important;
+}
+
+.verify-card {
+    border-radius: 10px;
+    box-shadow: 3px 5px 10px 3px $gray-200;;
+}
+
+.wizard-page {
+    min-height: 150px !important;
+}
+
+.verify-button {
+    border-radius: 10px;
+    background-color: $blue !important;
+    font-weight: 700 !important;
+    color: $white;
+    font-size: 1.1em;
+}

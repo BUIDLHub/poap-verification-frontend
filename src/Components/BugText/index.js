@@ -10,7 +10,7 @@ const BugText = () => {
         Are you confused or did you encounter a bug?
       </p>
       <p className={cn("bug-text")}>
-        <a href="/" rel="noopener noreferrer">
+        <a href="mailto:support@buidlhub.com" target="_blank" alt="email_support">
           Let us know!
         </a>
       </p>

@@ -1,9 +1,11 @@
 @import "./badges/BadgesPage";
-@import "./verify/VerifyPage.scss";
+@import "./verify/Verify";
+@import "./Header/Header";
+
 
 .main-view-container {
-  max-height: calc(100vh) !important;
-  overflow: hidden !important;
+  //max-height: calc(100vh) !important;
+  //overflow: hidden !important;
 }
 
 .nav-wrapper {

@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import View from './Badges';
 import {withRouter} from 'react-router-dom';
+import {default as verOps} from 'Redux/verification/operations';
 
 const s2p = state => {
     return {
@@ -12,6 +13,7 @@ const s2p = state => {
  const d2p = (dispatch,own) => { 
      return {
         goToBadge: (evt, tokenID) => {
+            dispatch(verOps.clear());
             own.history.push(`/verify/${evt.id}/${tokenID}`);
         }
     } 

@@ -16,7 +16,9 @@ export default class BUIDLHub extends React.Component {
         </Row>
         <Row className={cn(align.full,  align.allCenter)}>
           <Col xs="12" className={cn("buidlhub-logo-container", align.rightCenter, align.noMarginPad)}>
-            <img className={cn("buidlhub-logo")} src={Logo} alt="BUIDLHub" />
+            <a href="https://buidlhub.com" target="_blank" alt="buidlhub">
+              <img className={cn("buidlhub-logo")} src={Logo} alt="BUIDLHub" />
+            </a>
           </Col>
         </Row>
       </div>
