@@ -11,7 +11,7 @@ const EventTitle = () => {
         <div
           className={cn(align.full, align.allCenter, align.noMarginPad, "mt-3")}
         >
-          <Button>Event Title</Button>
+          <Button>POAP Private Chat Verification</Button>
         </div>
       </Col>
     </Row>

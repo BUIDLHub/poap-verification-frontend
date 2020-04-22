@@ -1,12 +1,12 @@
 import {connect} from 'react-redux';
-import View from './MikeEvent';
+import View from './VerifyEvent';
 import {withRouter} from 'react-router-dom';
 import _ from 'lodash';
 
 const s2p = (state,own) => {
     let eid = own.match.params.eventID;
-    
     let tid = own.match.params.tokenID;
+
     if(!eid) {
         return {}
     }
@@ -17,8 +17,6 @@ const s2p = (state,own) => {
     if(!state.poap) {
         return {};
     }
-
-    console.log("POAP", state.poap);
 
     let event = state.poap.byTokenID[tid-0];
     if(!event) {

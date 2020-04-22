@@ -9,11 +9,6 @@ import { default as initOps } from "Redux/init/operations";
 import Error from "Routes/error";
 import Badges from "Routes/badges";
 import Verify from "Routes/verify";
-// import Mike from "Routes/mikesEvent";
-
-// Import Font Awesome Icons Set
-import "font-awesome/css/font-awesome.min.css";
-// Import Main styles for this application
 
 import "scss/style.scss";
 
@@ -40,8 +35,9 @@ class AppStart extends Component {
         )}
       >
         <Switch>
-          <Route path={`/`} component={Badges} />
+          
           <Route path={"/verify"} component={Verify} />
+          <Route path={`/`} component={Badges} />
 
           <Route path={`/error`} component={Error} />
           <Redirect to="/error" />

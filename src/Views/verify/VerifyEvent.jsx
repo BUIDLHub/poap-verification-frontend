@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import Verify from './verification';
 import Instructions from './instructions';
 
-class MikeEvent extends Component {
+export default class VerifyEvent extends Component {
     render() {
         const {
             event,
@@ -46,5 +46,3 @@ class MikeEvent extends Component {
         );
     }
 }
-
-export default MikeEvent;

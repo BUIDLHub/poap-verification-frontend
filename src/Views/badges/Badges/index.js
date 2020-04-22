@@ -1,70 +1,20 @@
-import React, { Fragment } from "react";
-import cn from "classnames";
-import * as align from "Constants/alignments";
-import Button from "Components/Buttons/EventTitle";
-import { Row, Col } from "reactstrap";
-import _ from "lodash";
+import {connect} from 'react-redux';
+import View from './Badges';
+import {withRouter} from 'react-router-dom';
 
-export default class Badges extends React.Component {
-  static getDerivedStateFromProps(props, state) {
-    if (props.needsInit) {
-      setTimeout(() => {
-        props.runInit();
-      }, 1);
-    }
-    return {};
-  }
+const s2p = state => {
+    return {
+        loading: state.poap.loading,
+        eventsByToken: state.poap.byTokenID
+    } 
+} 
 
-  state = {};
+ const d2p = (dispatch,own) => { 
+     return {
+        goToBadge: (evt, tokenID) => {
+            own.history.push(`/verify/${evt.id}/${tokenID}`);
+        }
+    } 
+} 
 
-  render() {
-    const { eventsByToken } = this.props;
-
-    return (
-      <Col xs="2" className={cn("col-xs")}>
-        <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-          <Col
-            xs="12"
-            className={cn(align.leftCenter, align.noMarginPad, "yourbadges")}
-          >
-            <p className={cn("yourbadges", "ml-5")}>Your badges:</p>
-          </Col>
-          <Col xs="12" className={cn(align.leftCenter, align.noMarginPad)}>
-            {_.keys(eventsByToken).map((k, i) => {
-              let evt = eventsByToken[k];
-              return (
-                <EventBadge
-                  {...evt}
-                  goToBadge={() => {
-                    this.props.goToBadge(evt, k);
-                  }}
-                  key={i}
-                />
-              );
-            })}
-          </Col>
-        </Row>
-      </Col>
-    );
-  }
-}
-
-const EventBadge = (props) => {
-  return (
-    <div
-      className={cn(
-        align.full,
-        align.allCenter,
-        align.noMarginPad,
-        "clickable"
-      )}
-      onClick={props.goToBadge}
-    >
-      <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
-        <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
-          <img src={props.image_url} height="80" alt="badge" />
-        </Col>
-      </Row>
-    </div>
-  );
-};
+ export default withRouter(connect(s2p,d2p)(View))
