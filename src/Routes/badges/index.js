@@ -14,18 +14,17 @@ function Loading({ error }) {
   }
 }
 
-const Main = Loadable({
-  loader: () => import("Views/main/Main"),
+const Badges = Loadable({
+  loader: () => import("Views/badges/BadgesPage"),
   loading: Loading,
 });
 
 class App extends Component {
   render() {
-    
     return (
       <div className="container-fluid mr-0 ml-0 pr-0 pl-0">
         <Switch>
-          <Route path={`/`} component={Main} />
+          <Route path={`/`} component={Badges} />
           <Redirect to="/error" />
         </Switch>
       </div>

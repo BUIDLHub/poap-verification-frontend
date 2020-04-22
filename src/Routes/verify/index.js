@@ -11,18 +11,17 @@ function Loading({ error }) {
   }
 }
 
-const Main = Loadable({
-  loader: () => import("Views/mikesEvent"),
+const Verify = Loadable({
+  loader: () => import("Views/verify"),
   loading: Loading,
 });
 
 class App extends Component {
   render() {
-    
     return (
       <div className="container-fluid mr-0 ml-0 pr-0 pl-0">
         <Switch>
-          <Route path={`/mike/:eventID/:tokenID`} component={Main} />
+          <Route path={`/verify/:eventID/:tokenID`} component={Verify} />
           <Redirect to="/error" />
         </Switch>
       </div>

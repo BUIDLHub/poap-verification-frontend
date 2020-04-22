@@ -13,9 +13,9 @@ import {
 import cn from "classnames";
 import * as align from "Constants/alignments";
 
-import NavLogo from "./NavLogo";
-import EventTitle from "./EventTitle";
-import Status from "./Status";
+import NavLogo from "Components/Navbar/NavLogo";
+import EventTitle from "Components/Navbar/EventTitle";
+import Status from "Components/Navbar/Status";
 
 export default class Navi extends React.Component {
   constructor(props) {
