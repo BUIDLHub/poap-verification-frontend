@@ -53,10 +53,10 @@ const runVerify = (eventID, tokenID) => async (dispatch, getState) => {
             sig_recoveryParam: sig.recoveryParam
         });
         
-        if(!res.inviteLink) {
+        if(!res.inviteLinks) {
             dispatch(Creators.failure("You do not appear to be the token owner"));
         } else {
-            dispatch(Creators.update(res));
+            dispatch(Creators.update(res.inviteLinks));
         }
 
     } catch (e) {

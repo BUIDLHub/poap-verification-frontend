@@ -4,8 +4,7 @@ import {createReducer} from 'reduxsauce';
 
 const INIT = {
     loading: false,
-    inviteLink: null,
-    authCommand: null,
+    inviteLinks: [],
     status: null,
     error: null
 }
@@ -31,8 +30,7 @@ const update = (state=INIT, action) => {
     return {
         ...state,
         loading: false,
-        inviteLink: data.inviteLink,
-        authCommand: data.authCommand
+        inviteLinks: data
     }
 }
 
