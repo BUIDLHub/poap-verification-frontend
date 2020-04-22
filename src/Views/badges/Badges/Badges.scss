@@ -22,6 +22,7 @@
 }
 
 .badges-img {
+  background: transparent !important;
   @include xs() {
     height: 120px;
     width: 120px;
