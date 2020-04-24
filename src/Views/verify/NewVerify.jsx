@@ -20,7 +20,7 @@ class NewVerify extends Component {
             <Shell history={this.props.history}>
                     <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
                         <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
-                            <Header title={event?event.name:"Unknown Event"} titleOnly />
+                            <Header title={event?event.name:"Loading..."} titleOnly />
                         </Col>
                     </Row>
                     <div className={cn("center-content", align.full, "pb-5", align.topCenter, align.noMarginPad)}>
@@ -35,7 +35,7 @@ class NewVerify extends Component {
 
                         <Row className={cn(align.full, "pt-5", align.noMarginPad, align.allCenter)}>
                             <Col xs="10" className={cn(align.allCenter, align.noMarginPad)}>
-                                <Verification eventID={event?event.id:null} tokenID={tokenID}  />
+                                <Verification event={event} tokenID={tokenID}  />
                             </Col>
                         </Row>
                         

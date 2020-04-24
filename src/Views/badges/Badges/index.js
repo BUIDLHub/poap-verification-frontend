@@ -5,6 +5,7 @@ import {default as verOps} from 'Redux/verification/operations';
 
 const s2p = state => {
     return {
+        account: state.web3.account,
         loading: state.poap.loading,
         eventsByToken: state.poap.byTokenID
     } 

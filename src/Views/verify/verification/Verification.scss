@@ -17,4 +17,11 @@
     font-weight: 700 !important;
     color: $white;
     font-size: 1.1em;
+
+    &.disabled {
+        background-color: $gray-400;
+        &:hover {
+            cursor: default;
+        }
+    }
 }

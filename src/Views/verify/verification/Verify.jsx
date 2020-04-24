@@ -80,10 +80,13 @@ class ReqPage extends Component {
     render() {
  
         const {
+            event,
             loading,
             status,
             error
         } = this.props;
+
+        let disabled = event === null || typeof event === 'undefined';
 
         return (
             <div className={cn("wizard-page", align.full, align.topCenter, align.noMarginPad)}>
@@ -127,7 +130,8 @@ class ReqPage extends Component {
                         </div>
                     </Col>
                     <Col xs="3" className={cn(align.allCenter, align.noMarginPad)}>
-                        <Button className={cn("verify-button", "px-5")} size="sm" 
+                        <Button className={cn("verify-button", {disabled}, "px-5")} size="sm" 
+                                    disabled={disabled}
                                     onClick={this.verify}>Verify</Button>
                     </Col>
                 </Row>

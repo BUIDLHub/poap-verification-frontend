@@ -17,6 +17,7 @@ import {default as toastr} from 'Redux/toastr/operations';
 const s2p = state => {
     let ver = state.verification;
     return {
+        verifyComplete: ver.completed,
         loading: ver.loading,
         status: ver.status,
         error: ver.error,

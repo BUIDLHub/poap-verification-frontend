@@ -6,7 +6,8 @@ const INIT = {
     loading: false,
     inviteLinks: [],
     status: null,
-    error: null
+    error: null,
+    completed: false
 }
 
 
@@ -30,7 +31,18 @@ const update = (state=INIT, action) => {
     return {
         ...state,
         loading: false,
-        inviteLinks: data
+        inviteLinks: data,
+        completed: true
+    }
+}
+
+const clear = (state=INIT) => {
+    return {
+        ...state,
+        loading: false,
+        completed: false,
+        inviteLinks: [],
+        error: null
     }
 }
 
@@ -43,6 +55,7 @@ const fail = (state=INIT, action) => {
 }
 
 const HANDLERS = {
+    [Types.CLEAR]: clear,
     [Types.WORKING]: working,
     [Types.STATUS]: status,
     [Types.FAILURE]: fail,

@@ -66,7 +66,7 @@ const runVerify = (eventID, tokenID) => async (dispatch, getState) => {
 }
 
 const clear = () => dispatch => {
-    dispatch(Creators.update([]));
+    dispatch(Creators.clear());
 }
 
 export default {

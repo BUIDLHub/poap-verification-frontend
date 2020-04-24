@@ -8,12 +8,28 @@ import ServerRow from './ServerRow';
 class NewInstructions extends Component {
     render() {
         const {
+            verifyComplete,
             inviteLinks,
             className
         }  = this.props;
 
-        if(!inviteLinks || inviteLinks.length === 0) {
+        if(!verifyComplete) {
             return null;
+        }
+
+        if(!inviteLinks || inviteLinks.length === 0) {
+            return (
+                <div className={cn(align.full, align.allCenter, align.noMarginPad)}>
+                    <Row className={cn(align.full, align.noMarginPad, align.allCenter)}>
+                        <Col xs="12" className={cn(align.allCenter, align.noMarginPad)}>
+                            <span className={cn('font-weight-bold', 'text-1')}>
+                                No chat channels configured for this event. Contact the POAP team 
+                                if you feel like this is incorrect.
+                            </span>
+                        </Col>
+                    </Row>
+                </div>
+            )
         }
 
         return (

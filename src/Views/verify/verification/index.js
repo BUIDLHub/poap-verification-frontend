@@ -12,7 +12,7 @@ const s2p = state => {
 } 
 
  const d2p = (dispatch,own) => { 
-     let eventID = own.eventID;
+     let eventID = own.event?own.event.id:null;
      let tokenID = own.tokenID;
      return {
          doVerify: () => {
